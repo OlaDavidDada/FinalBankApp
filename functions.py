@@ -36,13 +36,13 @@ class Bank(User):
             self.balance = self.balance - self.amount
             return 'Account balance is now £' + str(self.balance)
     
-    # def transfer(self, amount):
-    #     self.amount = int(amount)
-    #     if self.amount > self.balance:
-    #         return 'Insufficient funds £' + str(self.balance)
-    #     else:
-    #         self.balance = self.balance - self.amount
-    #         return 'Account balance is now £' + str(self.amount)
+    def transfer(self, amount):
+        self.amount = int(amount)
+        if self.amount > self.balance:
+            return 'Insufficient funds £' + str(self.balance)
+        else:
+            self.balance = self.balance - self.amount
+            return 'Account balance is now £' + str(self.balance)
 
     def viewBalance(self):
         return str(self.balance)

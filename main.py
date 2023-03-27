@@ -79,6 +79,16 @@ def withdraw():
   else:
     return render_template('withdraw.html')
 
+@app.route('/transfer', methods = ['GET', 'POST'])
+def transfer():
+  if request.method == 'POST':
+    amount = request.form['transfer']
+    user.transfer(amount)
+    print(user.showDetails())
+    return render_template('transfer.html')
+  else:
+    return render_template('transfer.html')
+
 @app.route('/logout')
 def logout():
   session.pop('user', None)
