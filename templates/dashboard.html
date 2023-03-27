@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css') }}" />
+    <script src="https://kit.fontawesome.com/5daa8eb347.js" crossorigin="anonymous"></script>
+    <title>Registration Page</title>
+</head>
+
+<body>
+    <div id="sidebar">
+        <a href="/"><span>WeBank</span></a>
+        <a href="dashboard"><i class="fa-solid fa-house fa-fw"></i><span>Account Details</span></a>
+        <a href="deposit"><i class="fa-solid fa-wallet fa-fw"></i><span>Deposit</span></a>
+        <a href="withdraw"><i class="fa-solid fa-money-bill fa-fw"></i><span>Withdraw</span></a>
+        <a href="transfer"><i class="fa-solid fa-money-bill-transfer fa-fw"></i><span>Transfer</span></a>
+    </div>
+
+    <div id="content">
+        <div class="form-group">
+            <label for="firstname">First Name</label><br>
+            <span><input type="text" name="firstname"></span>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label><br>
+            <span><input type="text" name="lastname"></span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label><br>
+            <span><input type="text" name="email"></span>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label><br>
+            <span><input type="phone" name="phonenumber"></span>
+        </div>
+        <div class="form-group">
+            <label for="accountnumber">Account Number</label><br>
+            <span><input type="number" name="accountnumber"></span>
+        </div>
+    </div>
+</body>
+
+</html>

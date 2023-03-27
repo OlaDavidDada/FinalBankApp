@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='homepage.css') }}" />
+    <title>Landing Page</title>
+</head>
+
+
+{% if 'user' in session %}
+
+<div id="sidebar">
+    <a href="/"><span>WeBank</span></a>
+    <a href="dashboard"><i class="fa-solid fa-house fa-fw"></i><span>Account Details</span></a>
+    <a href="deposit"><i class="fa-solid fa-wallet fa-fw"></i><span>Deposit</span></a>
+    <a href="withdraw"><i class="fa-solid fa-money-bill fa-fw"></i><span>Withdraw</span></a>
+    <a href="transfer"><i class="fa-solid fa-money-bill-transfer fa-fw"></i><span>Transfer</span></a>
+</div>
+
+<head>Your Account</head>
+
+<div class="container">
+    <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Account Information</h5>
+                <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                  <form method="post">
+
+                    <b>Username: </b>
+                    
+                    
+                    
+                    <li class="list-group-item"><input type="text" placeholder="" value="{{session['user']}}" class="form-control" id="username" name = "username" readonly></li></li>
+                    
+          
+                    <b>Balance: </b>
+
+                    <li class="list-group-item"><input type="text" placeholder="0" value='{{money}}' class="form-control" id="username" name = "username" readonly></li></li>
+  
+                  </form>
+                </ul>
+               </div>
+               
+               <hr>
+           
+              </div>
+            </div>
+</div>
+{% else %}
+
+<body>
+    <div id="header" action = '/home'>
+        <div id="logodiv">
+            <p id="logo">WeBank</p>
+        </div>
+        <div id="functions">
+            <p><a href="#" class="functionsbuttons">Save</a></p>
+            <p><a href="#" class="functionsbuttons">Withdraw</a></p>
+            <p><a href="#" class="functionsbuttons">Transfer</a></p>
+        </div>
+        <div id="buttonsattheright">
+            <button type="button" id="signin"><a href="login">Sign In</a></button>
+            <button type="button" id="createaccount"><a href="register">Create free account</a></button>
+        </div>
+    </div>
+    <div id="content">
+        <div>
+            <h1>The Bank of the People</h1>
+            <h3>Save, spend, send and invest money across borders</h3>
+            <button type="button" id="joinwebank"><a href="register">Join WeBank</a></button>
+        </div>
+        <div id="imagediv">
+            <img src="{{url_for('static', filename='bankimage.jpeg') }}" alt="Bank card image" width="250" height="250">
+        </div>
+    </div>
+</body>
+{% endif %}
+</html>
